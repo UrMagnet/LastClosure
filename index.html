@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Closure & A Last Letter for You</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-viewport">
+        <!-- Background Audio -->
+        <audio id="bgm-audio" loop preload="auto">
+            <source src="../Song.mp3" type="audio/mpeg">
+            <source src="Song.mp3" type="audio/mpeg">
+            <source src="music/Song.mp3" type="audio/mpeg">
+            <source src="song.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Main Scrapbook Container -->
+        <div class="scrapbook-wrapper">
+            <div class="book" id="book">
+
+                <!-- PAGE 0: COVER -->
+                <div class="page cover-page active" id="page-0">
+                    <div class="page-inner">
+                        <div class="stamp-badge">FOR QYREENIA</div>
+                        <div class="cover-content">
+                            <span class="sticker top-left-ribbon">🎀</span>
+                            <span class="sticker bottom-right-bear">🧸</span>
+                            <div class="title-frame">
+                                <h1 class="cover-title">Closure &<br><span>A Last Letter for You</span></h1>
+                            </div>
+                            <button class="btn-primary" onclick="turnPage(1); tryPlayMusic();">
+                                <span>Buka Buku</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                            <div class="stars-deco">✨ 💖 ✨</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 1: DEAR QYREENIA -->
+                <div class="page" id="page-1">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Dear Qyreenia Felisia Artanti,</h2>
+                            <span class="sticker-header">🍵</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-left">
+                                <div class="washi-tape tape-pink"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20241224-WA0015.jpg"
+                                        alt="Memori 1"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Qyreenia'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>Hellow rin, how are you?? I miss you so baaddd… hahaha. First of all congratsss udah
+                                    menamatkan prabu yang super melelahkan yet a lott of fuunnn ituuuu..</p>
+                                <p>So yeah maybe this message will be the last time, my last effort for you, my last
+                                    gift and my last things I want to talk with you before we will be strangers again.
+                                    So ya hear me out or read my last won’t ya?</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(0)">‹ Prev</button>
+                            <span class="page-num">1 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(2)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 2: MAAF GA BACA CHAT -->
+                <div class="page" id="page-2">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Alasan Menunda Respon</h2>
+                            <span class="sticker-header">🍣</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-right">
+                                <div class="washi-tape tape-yellow"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20241224-WA0016.jpg"
+                                        alt="Memori 2"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+2'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>Okey pertama-tama maaf banget aku nggak baca chat kamu selama dua minggu gitu? Maaf
+                                    banget hehehe. Sebenarnya jujurly alasan pertama aku menunda-nunda respon kamu
+                                    karena ya... hal ini tuh menandakan akhir banget dari hubungan kita, kamu mau all
+                                    your stuff dibalikin.</p>
+                                <p>Pertama kali baca hal itu aku merasa jarak kita semakin dekat dengan menjadi stranger
+                                    again, makanya aku sengaja ga baca chat kamu. Tapi jujur awalnya sengaja dan coba
+                                    nyari kesibukan.</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(1)">‹ Prev</button>
+                            <span class="page-num">2 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(3)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 3: KESIBUKAN & FRAGILE -->
+                <div class="page" id="page-3">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Surat Pengganti</h2>
+                            <span class="sticker-header">🎸</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-left">
+                                <div class="washi-tape tape-blue"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20241224-WA0017.jpg"
+                                        alt="Memori 3"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+3'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>Dari situ aku mulai nyari kerjaan tambahan ntah itu side project aku atau dosen,
+                                    malah jadinya berat dan tepar sendiri. Setelah aku baca chat kamu yang bilang kamu
+                                    ga bisa lama-lama dan harus nginep ga pulang ke tamel, itu menggambarkan sibuknya
+                                    kamu.</p>
+                                <p>Disitu juga lah aku sadar kayaknya aku gamau ngabisin waktu kamu lebih lama di tengah
+                                    padatnya kamu. Jadi ya aku nulis surat ini sebagai ganti kalo kita ga ketemu lagi.
+                                </p>
+                                <p class="note-italic">(Kalo bisa jangan ngechat aku pake gw elu pwiss... take it easy
+                                    on me riinn I'm very very fragile).</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(2)">‹ Prev</button>
+                            <span class="page-num">3 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(4)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 4: THANK YOU FOR TEACHING ME -->
+                <div class="page" id="page-4">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Thank You for Teaching Me</h2>
+                            <span class="sticker-header">🧸</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-right">
+                                <div class="washi-tape tape-pink"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20241224-WA0018.jpg"
+                                        alt="Memori 4"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+4'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>You know it's really hard for me knowing that we were having a lot of cherish, chaos,
+                                    and crazy in our roomchat, turn into krik krik krik kek kuburan wkwkwk. This is my
+                                    first time ngerasain kayak gini dan wow turns out rasanya sakit banget ya kehilangan
+                                    tuh.</p>
+                                <p>Rin... jujur aja aku bersyukur banget pernah punya kamu dalam hidup aku.</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(3)">‹ Prev</button>
+                            <span class="page-num">4 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(5)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 5: BELAJAR EMOSI -->
+                <div class="page" id="page-5">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Menjadi Lengkap</h2>
+                            <span class="sticker-header">🌸</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-left">
+                                <div class="washi-tape tape-green"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20241224-WA0019.jpg"
+                                        alt="Memori 5"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+5'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>Kamu mengajarkan aku banyak banget hal rin, ngajarin cara nge-treat cewek, ngajarin
+                                    psikologi, ngajarin makan sushi pake wasabi, dan lastly kamu ngajarin aku kehilangan
+                                    seseorang yang sangat aku sayang.</p>
+                                <p>Kamu mengajarkan aku emosi yang selama ini susah aku dapet. Ketika sama kamu aku jadi
+                                    lengkap rin, emosi sedih aku akhirnya ada. Kek akhirnya ketika aku rewatch
+                                    Spider-Man atau film romance aku bisa meraskan emosinya dan menangis. So big thanks
+                                    to you kiriiinnn...</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(4)">‹ Prev</button>
+                            <span class="page-num">5 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(6)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 6: MEMORY LANE 2024-2026 -->
+                <div class="page" id="page-6">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Memory Lane (2024-2026)</h2>
+                            <span class="sticker-header">✨</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-right">
+                                <div class="washi-tape tape-yellow"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20241224-WA0020.jpg"
+                                        alt="Memori 6"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+6'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>Rin... jujur aja aku masih berusaha untuk bisa tanpa kamu. Haahhhh 3 bulan sudah aku
+                                    menghitung hari dan masih terus mencoba melupakan kamu.</p>
+                                <p class="quote-box">"kamu mengajarkan bahagia bersama mu tapi kamu lupa mengajarkan
+                                    bahagia tanpa ada dirimu"</p>
+                                <p>Ciaa elaahh aseekk geli bangetttt…</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(5)">‹ Prev</button>
+                            <span class="page-num">6 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(7)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 7: KENANGAN INDAH -->
+                <div class="page" id="page-7">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>The Best Moment</h2>
+                            <span class="sticker-header">🦋</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-left">
+                                <div class="washi-tape tape-pink"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20241224-WA0021.jpg"
+                                        alt="Memori 7"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+7'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>Seneng banget selama kita 2024-2026 ini banyak kenangan sama kamu: malem perpisahan
+                                    BEM, perpisahan Ekraf, jalan-jalan keliling Bandung, Lembang, Dago, main di Jakarta
+                                    ke museum, ke mall, dan explore kuliner.</p>
+                                <p>Berkat kamu aku jadi nonton konser, dan you give me my first experience about kissing
+                                    and 'the other things' hahaha. It was an honour and pleasure to do those things with
+                                    you. Overall 100000/10. The best moment I've ever had in my life.</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(6)">‹ Prev</button>
+                            <span class="page-num">7 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(8)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 8: MY SINCERE APOLOGIES -->
+                <div class="page" id="page-8">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>My Sincere Apologies</h2>
+                            <span class="sticker-header">🩹</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-right">
+                                <div class="washi-tape tape-blue"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20241229-WA0020.jpg"
+                                        alt="Memori 8"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+8'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>And lastly, it still hurts me so bad when you decide to walk away from my life, our
+                                    journey has to come to an end. A lot of promises that we made yang gabisa kesampaian
+                                    kayak wisuda bareng, nyobain beberapa bucket list tempat, dan lain-lainnya.</p>
+                                <p>Disini aku mau menyampaikan permohonan maaf aku semuanya:</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(7)">‹ Prev</button>
+                            <span class="page-num">8 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(9)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 9: DAFTAR PERMINTAAN MAAF -->
+                <div class="page" id="page-9">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Permohonan Maafku</h2>
+                            <span class="sticker-header">💌</span>
+                        </div>
+                        <div class="page-content">
+                            <ul class="apology-list">
+                                <li>Kalo dari awal aku gabisa berubah, aku minta maaf.</li>
+                                <li>Kalau tentang nggak membalas kamu waktu di Thailand bahkan sampe main sama cewe
+                                    lain, aku minta maaf ya.</li>
+                                <li>Kalau soal pinjol, aku juga minta maaf.</li>
+                                <li>Kalau tentang aku yang gabisa provide kamu, aku juga minta maaf.</li>
+                                <li>Kalau soal cemburuan sampe strict sama kamu, aku minta maaf.</li>
+                                <li>Kalau soal aku kurang dewasa, aku juga minta maaf rin.</li>
+                            </ul>
+                            <div class="polaroid-wrapper rot-left mini-polaroid">
+                                <div class="washi-tape tape-yellow"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20251205-WA0016.jpg"
+                                        alt="Memori 9"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+9'">
+                                </div>
+                            </div>
+                            <p class="apology-note">Nggak, aku minta maaf bukan dengan harapan balikan. Aku minta maaf
+                                karena aku bener-bener mau selesaiin semua perasaan aku supaya ga membuat kamu capek
+                                lebih lagi.</p>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(8)">‹ Prev</button>
+                            <span class="page-num">9 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(10)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 10: CLOSURE & WISHES -->
+                <div class="page" id="page-10">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Closure & Wishes</h2>
+                            <span class="sticker-header">🕊️</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-right">
+                                <div class="washi-tape tape-green"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20260131-WA0028.jpg"
+                                        alt="Memori 10"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+10'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>Lastly, semoga kamu sukses terus, sehat terus, bahagia terus, seneng-seneng terus di
+                                    kala kamu susah maupun seneng. Dan ketika kamu menemukan seseorang yang baru, I hope
+                                    dia nge-treat kamu what you deserve from me. I hope he buys you flowers, gives you
+                                    all his hours, takes you to every concert or places cause I know you like it that
+                                    much.</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(9)">‹ Prev</button>
+                            <span class="page-num">10 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(11)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 11: MY CHAPTER ENDS -->
+                <div class="page" id="page-11">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <h2>Stepping Back</h2>
+                            <span class="sticker-header">💖</span>
+                        </div>
+                        <div class="page-content">
+                            <div class="polaroid-wrapper rot-left">
+                                <div class="washi-tape tape-pink"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20260131-WA0029.jpg"
+                                        alt="Memori 11"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Memori+11'">
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <p>And finally, I accept the truth that we can't be together anymore. Thank you for
+                                    everything.. For teaching me what love feels like… and what pain feels like too.. I
+                                    hope my distance brings you peace, I hope you find your freedom. So I'm stepping
+                                    back now.</p>
+                                <p>Our future plans failed, but I tried… I really tried kok rin :)</p>
+                                <p>My chapter ends here, yet I still wish for your happiest days.</p>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(10)">‹ Prev</button>
+                            <span class="page-num">11 / 12</span>
+                            <button class="btn-nav btn-next" onclick="turnPage(12)">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 12: FIN -->
+                <div class="page fin-page" id="page-12">
+                    <div class="page-inner">
+                        <div class="fin-content">
+                            <div class="polaroid-wrapper rot-right main-fin-photo">
+                                <div class="washi-tape tape-blue"></div>
+                                <div class="polaroid">
+                                    <img src="images/rawr-20260826T160545Z-1-001/rawr/IMG-20260131-WA0030.jpg"
+                                        alt="Memori Terakhir"
+                                        onerror="this.src='https://via.placeholder.com/300x240/f0e6df/6b4d3e?text=Last+Photo'">
+                                </div>
+                            </div>
+                            <div class="fin-text-box">
+                                <p>Thank you My kiwiinnn… I love u.</p>
+                                <p>See u when I see uu and in case I didn't see yaa, good afternoon, good evening, and
+                                    good night.</p>
+                                <p class="sign-off">Byee byeee… Qyreenia Felisia Artanti.</p>
+                            </div>
+                            <h1 class="fin-title">Fin.</h1>
+                            <span class="sticker fin-flower">🥀</span>
+                        </div>
+                        <div class="page-footer">
+                            <button class="btn-nav btn-prev" onclick="turnPage(11)">‹ Prev</button>
+                            <span class="page-num">12 / 12</span>
+                            <button class="btn-nav btn-next" disabled style="opacity: 0.3;">Next ›</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
